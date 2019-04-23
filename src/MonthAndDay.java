@@ -13,9 +13,18 @@ public class MonthAndDay {
 
         boolean loop = true;
         while (loop) {
+            System.out.println("Monday's child is fair of face,\n" +
+                    "Tuesday's child is full of grace,\n" +
+                    "Wednesday's child is full of woe,\n" +
+                    "Thursday's child has far to go.\n" +
+                    "Friday's child is loving and giving,\n" +
+                    "Saturday's child works hard for a living,\n" +
+                    "But the child born on the Sabbath Day,\n" +
+                    "Is fair and wise and good in every way.");
 
 
-            System.out.println("Enter the month you were born (1 - 12) ");
+
+            System.out.println("\n" + "Enter the month you were born (1 - 12) ");
 
             m = keyboard.nextInt();
 
@@ -27,9 +36,12 @@ public class MonthAndDay {
 
             Y = keyboard.nextInt();
 
+            System.out.println("\n\n\n\n\n\n");
 
 
             System.out.println(month(m, d));
+
+
 
 
             if (day(m, d, Y) == 1) {
@@ -48,14 +60,10 @@ public class MonthAndDay {
                 System.out.println("Your birthday is on a Saturday");
             }
 
-            System.out.println(" ");
-            System.out.println(" ");
-            System.out.println(" ");
+            System.out.println(poem((day(m, d, Y))));
 
 
-
-            System.out.println("Enter another date");
-
+            System.out.println("\n\n" + "Enter another date"+"\n");
 
         }
     }
@@ -86,9 +94,9 @@ public class MonthAndDay {
 
         if (m == 1) {
             answer = "There are 31 days in January";
-        } else if ((m == 2)&&(d<29)) {
+        } else if ((m == 2) && (d < 29)) {
             answer = "There are 28 days in February";
-        } else if ((m == 2)&& (d == 29)){
+        } else if ((m == 2) && (d == 29)) {
             answer = "There are 29 days in February";
         } else if (m == 3) {
             answer = "There are 31 days in March";
@@ -113,5 +121,30 @@ public class MonthAndDay {
         }
 
         return answer;
+    }
+
+    public static String poem(int h){
+        String line;
+        line = "";
+
+        if (h == 1) {
+            line = "You are fair and wise and good in every way";
+        } else if (h == 2) {
+            line = "You are fair of face";
+        } else if (h == 3) {
+            line = "You are full of grace";
+        } else if (h == 4) {
+            line = "You are full of woe";
+        } else if (h == 5) {
+            line = "You have far to go";
+        } else if (h == 6) {
+            line = "You are loving and giving";
+        } else if (h == 0) {
+            line = "You work hard for a living";
+        }
+
+        return line;
+
+
     }
 }
