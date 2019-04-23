@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MonthAndDay {
 
-    public static void main(String[]args) {
+    public static void main(String[] args) {
 
         int d;
         int m;
@@ -12,12 +12,7 @@ public class MonthAndDay {
 
 
         boolean loop = true;
-        while(loop){
-
-
-
-
-
+        while (loop) {
 
 
             System.out.println("Enter the month you were born (1 - 12) ");
@@ -33,6 +28,8 @@ public class MonthAndDay {
             Y = keyboard.nextInt();
 
 
+
+            System.out.println(month(m, d));
 
 
             if (day(m, d, Y) == 1) {
@@ -51,15 +48,18 @@ public class MonthAndDay {
                 System.out.println("Your birthday is on a Saturday");
             }
 
+            System.out.println(" ");
+            System.out.println(" ");
+            System.out.println(" ");
+
+
+
             System.out.println("Enter another date");
-
-
-
-
 
 
         }
     }
+
     public static int day(int m, int d, int Y) {
         int h;
 
@@ -76,5 +76,42 @@ public class MonthAndDay {
         h = ((d + (13 * (m + 1) / 5) + Y + (Y / 4) - (Y / 100) + (Y / 400)) % 7);
 
         return h;
+    }
+
+    public static String month(int m, int d) {
+
+        String answer;
+        answer = "";
+
+
+        if (m == 1) {
+            answer = "There are 31 days in January";
+        } else if ((m == 2)&&(d<29)) {
+            answer = "There are 28 days in February";
+        } else if ((m == 2)&& (d == 29)){
+            answer = "There are 29 days in February";
+        } else if (m == 3) {
+            answer = "There are 31 days in March";
+        } else if (m == 4) {
+            answer = "There are 30 days in April";
+        } else if (m == 5) {
+            answer = "There are 31 days in May";
+        } else if (m == 6) {
+            answer = "There are 30 days in June";
+        } else if (m == 7) {
+            answer = "There are 31 days in July";
+        } else if (m == 8) {
+            answer = "There are 31 days in August";
+        } else if (m == 9) {
+            answer = "There are 30 days in September";
+        } else if (m == 10) {
+            answer = "There are 31 days in October";
+        } else if (m == 11) {
+            answer = "There are 30 days in November";
+        } else if (m == 12) {
+            answer = "There are 31 days in December";
+        }
+
+        return answer;
     }
 }
